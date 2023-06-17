@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../util/horizontal_scrollbar.dart';
 import '../util/multi_select_item.dart';
 
@@ -162,7 +163,7 @@ class MultiSelectChipDisplay<V> extends StatelessWidget {
         selectedColor: colorator != null && colorator!(item.value) != null
             ? colorator!(item.value)
             : chipColor != null
-                ? chipColor
+                ? chipColor!.withOpacity(0.08)
                 : Theme.of(context).primaryColor.withOpacity(0.33),
         onSelected: (_) {
           if (onTap != null) onTap!(item.value);
